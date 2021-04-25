@@ -6,16 +6,9 @@ const CreateNote = (props) => {
 
   const [expand, setExpand] = useState(false);
 
-  const [note, setNote] = useState({
-    title:'',
-    content:'',
-  });
+  const [note, setNote] = useState({title:'',content:''});
 
   const InputEvent = (event) =>{
-
-    //const value = event.target.value;
-    //const name = event.target.value;
-
     const {name, value} = event.target;
 
     setNote((prevData) =>{
@@ -32,40 +25,56 @@ const CreateNote = (props) => {
       setNote({
         title:'',
         content:'',
+        docname:'',
       });
   };
 
   const expandIt = () =>{
     setExpand(true);
   }
+  const dontExpandIt = () =>{
+    setExpand(false);
+  }
   return (
     <>
         <div className="main_note">
           <form>
-
-
             <input type='text'
               name='title'
               value={note.title}
               onChange={InputEvent}
-              placeholder ="Title"
+              placeholder ="Visit Title"
               autoComplete='off'
+              onClick={expandIt}
               />
 
+
+
+            {expand?
+            <textarea
+              rows=''
+              column=''
+              name='docname'
+              value={note.docname}
+              onChange={InputEvent}
+              placeholder="Doctor's Name...">
+            </textarea> : null}
+
+            {expand?
             <textarea
               rows=''
               column=''
               name='content'
               value={note.content}
               onChange={InputEvent}
-              placeholder="Write a note">
-              onClick={expandIt}
-            </textarea>
+              placeholder="Details regarding your doctor's visit...">
+            </textarea> : null}
 
-            
             <Button onClick={addEvent}>
-              <AddIcon className= 'plus_sign'/>
-            </Button> :
+              <AddIcon className= 'plus_sign'
+              onClick={dontExpandIt}/>
+            </Button>
+
           </form>
         </div>
   </>

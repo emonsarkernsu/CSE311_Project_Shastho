@@ -12,7 +12,11 @@ return (
   <div className='note'>
   <h1> {props.title} </h1>
   <br/>
+  <p id="category"> Doctor Name </p>
+  <p> {props.docname} </p>
+  <p id="category"> Visit details </p>
   <p> {props.content} </p>
+
   <button className='btn' onClick={deleteNote}>
   <DeleteIcon className='deleteIcon' />
   </button>
