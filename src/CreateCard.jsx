@@ -48,8 +48,6 @@ const CreateNote = (props) => {
               onClick={expandIt}
               />
 
-
-
             {expand?
             <textarea
               rows=''

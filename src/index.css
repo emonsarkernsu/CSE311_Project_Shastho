@@ -1,5 +1,6 @@
 
 *{
+  font-family: montserrat;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -13,6 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FCF6F5FF;
+
 }
 
 code {
@@ -24,44 +27,112 @@ h2{
   font-style: italic;
 }
 
-#category {
-  font-weight: bold;
-  font-size: small;
-  font-style: italic;
-}
-
-
 *{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  align-items: center;
+  min-width: inherit;
+
 }
 .logostyle{
-  max-width: 150px;
+  max-width: 170px;
+  padding-right: 20px;
+}
+
+.navlinks{
+  font-size: 100%;
+  display: flex;
+  justify-content:center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #fff;
+  border-radius: 25px;
+  max-width: 500px;
+  border-spacing: 10px;
+  margin: auto;
+  margin-top: 10px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+.navlinks a {
+  color: #3b3b3b;
+  border-radius: 25px;
+  background-position: center;
+  border: 0px solid #2BAE66FF;
+  width: 90px;
+  transition: 0.3s;
+  text-decoration: none;
+  padding: 5px;
+  text-align: center;
+}
+
+.navlinks a:hover{
+  opacity: 0.5;
+  background-color: #2BAE66FF;
+  color: #fff;
+
+}
+
+a.active_class{
+  color: #fff;
+  font-weight:bolder;
+  background-color: #2BAE66FF;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+}
+
+a.active_class:hover{
+  color: #fff;
+  font-weight:bolder;
+  background-color: #2BAE66FF;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.introCard{
+  display: flex;
+  justify-content:center;
+  font-size: 80%;
+  padding: 10px;
+  background: #fff;
+  border-radius: 25px;
+  max-width: 500px;
+  border-spacing: 10px;
+  margin: auto;
+  margin-top: 10px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 .header{
   width: 100%;
   line-height: 100px;
-  background-color: #8aa29e;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 0px;
+  padding-top: 15px;
   color: white;
   box-shadow: 5px 2px 15px -5px rgba(0, 0, 0, 0);
 }
 
+.tagline{
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-size: 80%;
+}
 
 .main_note {
   width: 500px;
-  padding: 15px 10px 5px 10px;
-  margin: 20px auto;
+  font-size: 100%;
+  margin: 10px auto;
 
 }
 
 .my_notes h1{
   color: #34495e;
-  font-size: large;
+  font-size: 80%;
 }
 
 .my_notes p{
@@ -72,7 +143,7 @@ form {
   min-height: 50px;
   color: #ecf0f1;
   padding: 15px 10px 5px 10px;
-
+  background-color: #fff;
   border-radius: 10px;
   position: relative;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
@@ -95,7 +166,7 @@ textarea{
   background: transparent;
   border:none;
   outline: none;
-  font-size: 1rem;
+  font-size: 100%;
   margin: 10px 0;
 
 }
@@ -115,14 +186,14 @@ textarea{
 .MuiButton-root .plus_sign{
   font-size: 45px !important;
   font-weight: 900;
-  color: #eb6571;
+  color: #2BAE66FF;
   cursor: pointer;
   z-index: 222;
   background: transparent;
 }
 
 .MuiButton-root:hover{
-  background: #eb6571 !important;
+  background:#2BAE66FF !important;
 }
 .MuiButton-root:hover .plus_sign{
   color: #fff;
@@ -130,14 +201,30 @@ textarea{
 
 }
 
+.mapArea{
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+
+  align-content:space-around;
+
+}
 .note {
   background: #fff;
-  border-radius: 7px;
+  border-radius: 25px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
-  width: 240px;
   margin: 16px;
   float: left;
+  width: 470px;
+
+}
+
+#category {
+  font-weight: bold;
+  font-size: small;
+  font-style: italic;
+  text-align: left;
 }
 
 .note h1{
@@ -156,12 +243,12 @@ textarea{
 position: relative;
 float: right;
 margin-right: 10px;
-  color: #eb6571;
+  color: #2BAE66FF;
   border: none;
   width: 50px;
   height: 50px;
   background: transparent;
-  cursor: point;
+  cursor: pointer;
   outline: none;
   box-shadow: 3px 3px 15px -10 px rgba(0,0,0,0);
   border-radius: 50%;
@@ -173,15 +260,47 @@ margin-right: 10px;
 }
 
 .note .btn:hover{
-  background-color: #eb6571;
+  background-color: #2BAE66FF !important;
 }
 
 .note .btn:hover .deleteIcon{
-  color: #fff;
+  color: #fff !important;
 }
 
-footer {
+.graphCard{
+  background: #fff;
+  max-width: 500px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  border-spacing: 10px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+
+}
+.graph{
+  padding: 20px;
+}
+.graphHeader{
+ text-align: center;
+}
+
+
+.statusCard{
+  padding: 15px;
+}
+
+.footer {
+  font-style: oblique;
+  font-size: 80%;
+  padding: 10px;
   width: 100%;
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  float: bottom;
   bottom: 0;
+  position: fixed;
+
 }

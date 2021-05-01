@@ -10,7 +10,7 @@ const Note = (props) =>{
 return (
   <>
   <div className='note'>
-  <h1> {props.title} </h1>
+  <h1 className="noteText"> {props.title} </h1>
   <br/>
   <p id="category"> Doctor Name </p>
   <p> {props.docname} </p>

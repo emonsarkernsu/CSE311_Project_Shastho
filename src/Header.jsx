@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './Images/Logo white.png'
+import logo from './Images/Asset 1.svg'
 const Header = () => {
   return (
     <>
     <div className="header">
-    <h2>  ...</h2>
-    <img src={logo} alt="logo" style={{height: 50}} />
-    <h2>  ...</h2>
+
+    <img src={logo} alt="logo" style={{height: 35}} />
+
     </div>
+    <div className="tagline">
+    <p>Your personal health database</p>
+    </div>
+
   </>
   );
 };
