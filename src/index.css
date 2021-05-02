@@ -292,6 +292,46 @@ margin-right: 10px;
   padding: 15px;
 }
 
+.pageNotFoundBg{
+  background: #fff;
+  border-radius: 25px;
+  max-width: 500px;
+  margin:0 auto;
+}
+.notFoundPicture{
+  width: 400px;
+  height: 300px;
+}
+
+.pageNotFound{
+  background: #fff;
+  border-radius: 25px;
+  width: 500px;
+  height: 300px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: auto;
+}
+
+.pageNotFoundText{
+
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  top: 20px;
+}
+
 .footer {
   font-style: oblique;
   font-size: 80%;

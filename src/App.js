@@ -9,6 +9,7 @@ import CreateCard from './CreateCard';
 import Note from './Note';
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
+import PageNotFound from "./PageNotFound";
 import Footer from "./Footer";
 import Status from "./Status";
 import Tcholesterol from './Tcholesterol';
@@ -68,8 +69,13 @@ const App = () => {
       <Route exact path="/status">
       <IntroCardStatus/>
       <Status/>
-
       </Route>
+
+
+      <Route path="/">
+      <PageNotFound/>
+      </Route>
+
       </Switch>
       <Footer/>
     </>

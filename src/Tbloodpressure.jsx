@@ -23,10 +23,11 @@ const Tbloodpressure = () => {
           labels: dateval,
           datasets: [
             {
-              label: "bloodpressure level",
+              label: "Blood pressure level",
               data: valval,
-              backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-              borderWidth: 4
+              backgroundColor: ["#2BAE66FF"],
+              borderWidth: 4,
+              borderColor: ["#2BAE66FF"]
             }
           ]
         });
@@ -42,7 +43,7 @@ const Tbloodpressure = () => {
   }, []);
   return (
     <div className="graphCard">
-      <h1 className="graphHeader">Bloodpressure</h1>
+      <h1 className="graphHeader">Blood Pressure</h1>
       <div className="graph">
         <Line
           data={chartData}

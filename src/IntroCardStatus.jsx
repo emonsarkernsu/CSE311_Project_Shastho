@@ -6,7 +6,7 @@ const IntroCardStatus = () =>{
     <>
       <div className="introCard">
         <img className="logostyle" src={logo} alt="logo" style={{height: 50}} />
-        <p><b>Visits</b> page stores and manages all the details you might want to store from a doctors visit</p>
+        <p><b>Status</b> page stores all the details you might want to store about medical information in the family</p>
       </div>
     </>
   );

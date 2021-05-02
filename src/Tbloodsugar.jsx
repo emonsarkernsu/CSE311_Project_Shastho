@@ -23,10 +23,11 @@ const Tbloodsugar = () => {
           labels: dateval,
           datasets: [
             {
-              label: "bloodsugar level",
+              label: "Blood sugar level",
               data: valval,
-              backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-              borderWidth: 4
+              backgroundColor: ["#2BAE66FF"],
+              borderWidth: 4,
+              borderColor: ["#2BAE66FF"]
             }
           ]
         });
@@ -42,7 +43,7 @@ const Tbloodsugar = () => {
   }, []);
   return (
     <div className="graphCard">
-      <h1 className="graphHeader">Bloodsugar</h1>
+      <h1 className="graphHeader">Blood Sugar</h1>
       <div className="graph">
         <Line
           data={chartData}

@@ -23,10 +23,11 @@ const Tweight = () => {
           labels: dateval,
           datasets: [
             {
-              label: "weight level",
+              label: "Weight level",
               data: valval,
-              backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-              borderWidth: 4
+              backgroundColor: ["#2BAE66FF"],
+              borderWidth: 4,
+              borderColor: ["#2BAE66FF"]
             }
           ]
         });
