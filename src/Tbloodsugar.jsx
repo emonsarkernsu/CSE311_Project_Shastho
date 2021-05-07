@@ -15,8 +15,8 @@ const Tbloodsugar = () => {
       .then(res => {
         console.log(res);
         for (const dataObj of res.data) {
-          console.log(dataObj.Value);
-          valval.push(parseFloat(dataObj.Value));
+          console.log(dataObj.Value1);
+          valval.push(parseFloat(dataObj.Value1));
           dateval.push((dataObj.Date1));
         }
         setChartData({

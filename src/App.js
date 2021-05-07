@@ -12,6 +12,7 @@ import Navbar from "./Navbar";
 import PageNotFound from "./PageNotFound";
 import Footer from "./Footer";
 import Status from "./Status";
+import InputBloodSugar from "./InputBloodSugar";
 import Tcholesterol from './Tcholesterol';
 import Tbloodsugar from './Tbloodsugar';
 import Tbloodpressure from './Tbloodpressure';
@@ -58,9 +59,14 @@ const App = () => {
         </div>
       </Route>
       <Route exact path="/tracker">
+
         <IntroCardTracker/>
-        <Tweight/>
+        <div className="trackerContainer">
         <Tbloodsugar/>
+
+        <InputBloodSugar/>
+        </div>
+        <Tweight/>
         <Tcholesterol/>
         <Tbloodpressure/>
       <Status/>
