@@ -15,9 +15,9 @@ const Tweight = () => {
       .then(res => {
         console.log(res);
         for (const dataObj of res.data) {
-          console.log(dataObj.Value);
-          valval.push(parseFloat(dataObj.Value));
-          dateval.push((dataObj.Date1));
+          console.log(dataObj.Value3);
+          valval.push(parseFloat(dataObj.Value3));
+          dateval.push((dataObj.Date3));
         }
         setChartData({
           labels: dateval,

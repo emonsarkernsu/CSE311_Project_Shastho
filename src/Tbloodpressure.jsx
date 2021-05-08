@@ -15,9 +15,9 @@ const Tbloodpressure = () => {
       .then(res => {
         console.log(res);
         for (const dataObj of res.data) {
-          console.log(dataObj.Value);
-          valval.push(parseFloat(dataObj.Value));
-          dateval.push((dataObj.Date1));
+          console.log(dataObj.Value4);
+          valval.push(parseFloat(dataObj.Value4));
+          dateval.push((dataObj.Date4));
         }
         setChartData({
           labels: dateval,

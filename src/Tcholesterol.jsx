@@ -15,9 +15,9 @@ const Tcholesterol = () => {
       .then(res => {
         console.log(res);
         for (const dataObj of res.data) {
-          console.log(dataObj.Value);
-          valval.push(parseFloat(dataObj.Value));
-          dateval.push((dataObj.Date1));
+          console.log(dataObj.Value2);
+          valval.push(parseFloat(dataObj.Value2));
+          dateval.push((dataObj.Date2));
         }
         setChartData({
           labels: dateval,

@@ -13,6 +13,9 @@ import PageNotFound from "./PageNotFound";
 import Footer from "./Footer";
 import Status from "./Status";
 import InputBloodSugar from "./InputBloodSugar";
+import InputBloodPressure from "./InputBloodPressure";
+import InputCholesterol from "./InputCholesterol";
+import InputWeight from "./InputWeight";
 import Tcholesterol from './Tcholesterol';
 import Tbloodsugar from './Tbloodsugar';
 import Tbloodpressure from './Tbloodpressure';
@@ -59,16 +62,12 @@ const App = () => {
         </div>
       </Route>
       <Route exact path="/tracker">
-
         <IntroCardTracker/>
-        <div className="trackerContainer">
-        <Tbloodsugar/>
 
-        <InputBloodSugar/>
-        </div>
-        <Tweight/>
-        <Tcholesterol/>
-        <Tbloodpressure/>
+        <div className="trackerContainer"><Tweight/><InputWeight/></div>
+        <div className="trackerContainer"><Tcholesterol/><InputCholesterol/></div>
+        <div className="trackerContainer"><Tbloodpressure/><InputBloodPressure/></div>
+        <div className="trackerContainer"><Tbloodsugar/><InputBloodSugar/></div>
       <Status/>
 
       </Route>
