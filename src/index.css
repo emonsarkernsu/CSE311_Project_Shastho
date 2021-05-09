@@ -32,9 +32,126 @@ h2{
   padding: 0;
   margin: 0;
   align-items: center;
-  min-width: inherit;
+  min-width:inherit;
 
 }
+
+.forum_wrapper body{
+  height: 1000px;
+  width: 100%;
+  background: url(E:\NSU\cse311\Term project\First v\visitspage\src\Images\Login BG.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.center_btn{
+  margin: 0;
+  position: absolute;
+  left: 30%;
+  padding-top: 10px;
+}
+
+.login_btn{
+  color: #3b3b3b;
+  border-radius: 25px;
+  background-position: center;
+  border: 0px solid #2BAE66FF;
+  width: 90px;
+  transition: 0.3s;
+  text-decoration: none;
+  padding: 5px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.login_btn:hover{
+  padding-top: 10px;
+  color: #fff;
+  font-weight:bolder;
+  background-color: #2BAE66FF;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.login_logostyle{
+  padding-left: 40px;
+  max-width: 200px;
+}
+
+#label{
+  font-style: italic;
+  font-size: 70%;
+  text-align: center;
+}
+
+.form-group{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.forum_wrapper {
+  min-height: 300px;
+  border-style: solid;
+  border-width: medium;
+  border-color: #2BAE66FF;
+  padding: 20px ;
+  transform: translate(0, 40%);
+  position:fixed;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 25px;
+  position: relative;
+  max-width: 300px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.form-inner{
+  color: #000;
+}
+
+#name{
+  border-width:thin;
+  border-color: #0a0a0a;
+  font-weight:400;
+  font-size: 90%;
+  padding: 5px;
+  border-style: solid;
+  border-radius: 7px;
+  border-color: #616161;
+  height: 30px;
+}
+
+#email{
+  border-width:thin;
+  border-color: #0a0a0a;
+  font-weight:400;
+  font-size: 90%;
+  padding: 5px;
+  border-style: solid;
+  border-radius: 7px;
+  border-color: #616161;
+  height: 30px;
+}
+
+#password{
+  border-width:thin;
+  border-color: #0a0a0a;
+  font-weight:400;
+  font-size: 90%;
+  padding: 5px;
+  border-style: solid;
+  border-radius: 7px;
+  border-color: #616161;
+  height: 30px;
+}
+
 .logostyle{
   max-width: 170px;
   padding-right: 20px;
@@ -125,14 +242,15 @@ a.active_class:hover{
 
 .main_note {
   width: 500px;
-  font-size: 100%;
+  font-size: 80%;
   margin: 10px auto;
-
+  border-radius: 25px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
 .my_notes h1{
   color: #34495e;
-  font-size: 80%;
+  font-size: 10%;
 }
 
 .my_notes p{
@@ -140,9 +258,9 @@ a.active_class:hover{
 }
 
 form {
-  min-height: 50px;
+  min-height: 10px;
   color: #ecf0f1;
-  padding: 15px 10px 5px 10px;
+  padding: 10px;
   background-color: #fff;
   border-radius: 10px;
   position: relative;
@@ -372,7 +490,6 @@ margin-right: 10px;
   padding-top: 20px;
   border-spacing: 10px;
   border-radius: 25px;
-
 
 }
 .graph{

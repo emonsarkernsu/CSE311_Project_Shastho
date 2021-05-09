@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useState} from 'react';
+import LoginForum from './LoginForum'
 import Header from './Header';
 import IntroCardVisits from './IntroCardVisits'
 import IntroCardTracker from './IntroCardTracker'
@@ -23,27 +24,54 @@ import Tweight from './Tweight';
 
 const App = () => {
 
-    const [addItem, setAddItem] =useState([]);
-
+  const [addItem, setAddItem] =useState([]);
   const addNote = (note) => {
       setAddItem((prevData)=>{
         return [...prevData, note];
-      });
-  };
-
+      });};
   const onDelete = (id) =>{
     setAddItem((olddata)=>
     olddata.filter((currentdata, indx) =>{
       return indx !== id;
+    }))};
+
+//Login stuff
+const adminUser = {
+  email: "emon331@gmail.com",
+  password: "admin123"
+}
+const [user, setUser]=useState({name:"", email:""});
+const [error, setError]=useState("");
+
+const Login = details => {
+  console.log("details");
+
+  if(details.email == adminUser.email && details.password == adminUser.password){
+    console.log("Logged in");
+    setUser({
+      name: details.name,
+      email: details.email,
     })
-  )};
+  } else {
+    console.log("Details do not match");
+  }
+}
+
+const Logut = details => {
+  console.log("Logout");
+  setUser({
+    name: "",
+    email: ""
+  })
+}
 
   return (
     <>
+    {(user.email != "")?(
+    <div>
     <Navbar/>
     <Switch>
     <Route exact path ="/visits">
-
         <IntroCardVisits/>
         <CreateCard
           passNote={addNote}
@@ -83,6 +111,10 @@ const App = () => {
 
       </Switch>
       <Footer/>
+      </div>
+    ):(
+      <LoginForum Login={Login} error={error}/>
+    )}
     </>
   );
 };

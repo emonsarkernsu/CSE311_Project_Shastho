@@ -37,7 +37,7 @@ class Inputs extends React.Component {
       <div className="maincontainer">
 
               <div>
-              <p className="trackerInputText">Input <b>Blood Sugar</b> date & value below:</p>
+              <p className="trackerInputText">Input <b>Blood Pressure</b> date & value below:</p>
                 <form className="InputForumContainer" ref={(el) => this.myFormRef = el}>
 
                   <div className="InputForum">

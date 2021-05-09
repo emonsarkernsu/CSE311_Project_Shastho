@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import $ from 'jquery';
+
 
 const CreateNote = (props) => {
 
   const [expand, setExpand] = useState(false);
 
-  const [note, setNote] = useState({title:'',content:''});
+  const [note, setNote] = useState({title:'',docname:'',content:''});
 
   const InputEvent = (event) =>{
     const {name, value} = event.target;
@@ -35,10 +37,15 @@ const CreateNote = (props) => {
   const dontExpandIt = () =>{
     setExpand(false);
   }
+
+  function sub() {
+ $.post("http://localhost/insertval.php",note);
+  }
+
   return (
     <>
         <div className="main_note">
-          <form>
+          <form action="insertval.php" method="post">
             <input type='text'
               name='title'
               value={note.title}
@@ -47,6 +54,8 @@ const CreateNote = (props) => {
               autoComplete='off'
               onClick={expandIt}
               />
+
+
 
             {expand?
             <textarea
@@ -68,9 +77,11 @@ const CreateNote = (props) => {
               placeholder="Details regarding your doctor's visit...">
             </textarea> : null}
 
-            <Button onClick={addEvent}>
+            <Button onClick={()=>{addEvent();dontExpandIt();sub();}}>
               <AddIcon className= 'plus_sign'
-              onClick={dontExpandIt}/>
+              //onClick={dontExpandIt,sub()}
+              //onClick={sub()}
+              />
             </Button>
 
           </form>
