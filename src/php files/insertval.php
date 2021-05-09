@@ -1,5 +1,6 @@
 <?php
-$link=mysqli_connect("localhost","root","","demodb");
+include_once("code.php");
+$link = mysqli_connect("localhost","root","","demodb");
 
 if($link === false){
 die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -7,11 +8,20 @@ die("ERROR: Could not connect. " . mysqli_connect_error());
 
 
 
-$title = mysqli_real_escape_string($link, $_REQUEST['title']);
-$docname = mysqli_real_escape_string($link, $_REQUEST['docname']);
-$content = mysqli_real_escape_string($link, $_REQUEST['content']);
+$title = isset($_POST['title']) ? $_POST['title'] : '';
+$docname = isset($_POST['docname']) ? $_POST['docname'] : '';
+$content = isset($_POST['content']) ? $_POST['content'] : '';
 
-$sql = "INSERT INTO 'visits'('Title', 'DocName', 'Issue') VALUES ('$title','$docname', '$content')";
+$sql = mysqli_query($link,"INSERT INTO visits (Title, DocName, Issue) VALUES ('$title','$docname', '$content')");
+
+if(!$sql)
+    {
+        echo mysqli_error();
+    }
+    else
+    {
+        echo "Records added successfully.";
+    }
 
 mysqli_close($link);
 ?>
