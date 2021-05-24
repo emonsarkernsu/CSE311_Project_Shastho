@@ -28,7 +28,13 @@ import Tcholesterol from './Tcholesterol';
 import Tbloodsugar from './Tbloodsugar';
 import Tbloodpressure from './Tbloodpressure';
 import Tweight from './Tweight';
-import Retrieve from './Retrieve'
+import Retrieve from './Retrieve';
+import RetrieveAllergy from './RetrieveAllergy'
+import RetrieveCardiac from './RetrieveCardiac'
+import RetrieveDiabetes from './RetrieveDiabetes'
+import RetrieveGenetic from './RetrieveGenetic'
+import RetrieveMental from './RetrieveMental'
+import RetrieveObesity from './RetrieveObesity'
 
 const App = () => {
 
@@ -91,7 +97,7 @@ useEffect(()=>{
         <div className="trackerContainer"><Tcholesterol/><InputCholesterol/></div>
         <div className="trackerContainer"><Tbloodpressure/><InputBloodPressure/></div>
         <div className="trackerContainer"><Tbloodsugar/><InputBloodSugar/></div>
-      <Status/>
+
 
       </Route>
       <Route exact path="/status">
@@ -100,22 +106,28 @@ useEffect(()=>{
       </Route>
 
       <Route exact path="/status/allergy">
-      <CreateCardAllergy/>
+        <CreateCardAllergy/>
+        <RetrieveAllergy/>
       </Route>
       <Route exact path="/status/cardiac">
-      <CreateCardCardiac/>
+        <CreateCardCardiac/>
+        <RetrieveCardiac/>
       </Route>
       <Route exact path="/status/diabetes">
-      <CreateCardDiabetes/>
+        <CreateCardDiabetes/>
+        <RetrieveDiabetes/>
       </Route>
       <Route exact path="/status/genetic">
-      <CreateCardGenetic/>
+        <CreateCardGenetic/>
+        <RetrieveGenetic/>
       </Route>
       <Route exact path="/status/mental">
-      <CreateCardMental/>
+        <CreateCardMental/>
+        <RetrieveMental/>
       </Route>
       <Route exact path="/status/obesity">
-      <CreateCardObesity/>
+        <CreateCardObesity/>
+        <RetrieveObesity/>
       </Route>
 
       <Route path="/">

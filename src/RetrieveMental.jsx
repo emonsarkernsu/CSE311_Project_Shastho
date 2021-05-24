@@ -4,20 +4,20 @@ import Axios from 'axios';
 import DeleteIcon from '@material-ui/icons/Delete';
 import $ from 'jquery';
 
-const RetrieveAllergy=() =>{
+const RetrieveMental=() =>{
   const [data, setData] = useState([]);
 
     useEffect(() => {
          debugger;
          Axios
-             .get("http://localhost/retrievevalAllergy.php")
+             .get("http://localhost/retrievevalMental.php")
              .then(result => setData(result.data));
          console.log(data);
          debugger;
      }, []);
 
      function sub(item) {
-       $.post("http://localhost/deletevalAllergy.php",item);
+       $.post("http://localhost/deletevalMental.php",item);
        console.log(data);
        window.location.reload();
      }
@@ -26,9 +26,10 @@ const RetrieveAllergy=() =>{
          <div>
              <div className="row" style={{ 'margin': "10px" }}>
                  <div className="col-sm-12 btn btn-info">
+
                   </div>
              </div>
-             
+            
              <table class="table" >
                  <thead class="tableHeader">
                      <tr>
@@ -60,4 +61,4 @@ const RetrieveAllergy=() =>{
      )
  }
 
-export default RetrieveAllergy
+export default RetrieveMental
