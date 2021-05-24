@@ -39,7 +39,7 @@ h2{
 .forum_wrapper body{
   height: 1000px;
   width: 100%;
-  background: url(E:\NSU\cse311\Term project\First v\visitspage\src\Images\Login BG.svg);
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -115,6 +115,149 @@ h2{
 .form-inner{
   color: #000;
 }
+.storedValues{
+  justify-content:center;
+  padding-top: 10px;
+  display: flex;
+  left: 10;
+}
+.logout{
+  position:relative;
+  display: flex;
+  float: right;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding-right: 5px;
+
+}
+.logout .tooltip{
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.logout .tooltip::after{
+
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.logout:hover .tooltip{
+  visibility: visible;
+  opacity: 1;
+}
+
+.table{
+  padding: 10px;
+  justify-content:left;
+  font-size: 80%;
+  border-radius: 25px;
+  width: 500px;
+  max-width: 500px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  margin-top: 10px;
+  background-color: #fff;
+}
+.tableHeader{
+  justify-content:center;
+  text-align: left;
+  font-size: 80%;
+  padding: 10px;
+
+  border-radius: 25px;
+  max-width: 500px;
+  border-spacing: 10px;
+  margin: auto;
+  margin-top: 10px;
+}
+.thx{
+  width:5%;
+  text-decoration: none;
+}
+.trashBtn{
+  color: #2BAE66FF;
+  border: 0px;
+  cursor: pointer;
+  pointer-events:visibleFill;
+  position:relative;
+
+}
+
+.trash_sign{
+  color: #000;
+
+}
+.trash_sign:hover{
+  border-radius: 50px;
+  color: #2BAE66FF;
+
+}
+.trash_sign:active{
+  background-color: #2BAE66FF;
+  border-radius: 50px;
+  color: #fff;
+}
+.th1{
+  width:20%;
+  font-size: Large;
+}
+.th2{
+  width:30%;
+  font-size: Large;
+}
+.th3{
+  width:30%;
+  font-size: Large;
+}
+.td{
+  max-width: 100px;
+  overflow-wrap: break-word;
+  border-style: solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-color: #ddd;
+}
+
+.tableCard{
+  height: 70px;
+  justify-content:center;
+  font-size: medium;
+  padding: 10px;
+  border-radius: 25px;
+  max-width: 500px;
+  border-spacing: 10px;
+  margin: auto;
+  margin-top: 10px;
+
+}
+
+.tableBody :hover{
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-color: #2BAE66FF;
+  transition: 0.2s;
+}
+
 
 #name{
   border-width:thin;
@@ -241,13 +384,18 @@ a.active_class:hover{
 }
 
 .main_note {
+  padding: 10px;
+  background: #fff;
   width: 500px;
   font-size: 80%;
   margin: 10px auto;
   border-radius: 25px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
-
+.mainNoteTextArea{
+  height: 30px;
+  font-size: medium;
+}
 .my_notes h1{
   color: #34495e;
   font-size: 10%;
@@ -258,9 +406,9 @@ a.active_class:hover{
 }
 
 form {
-  min-height: 10px;
-  color: #ecf0f1;
-  padding: 10px;
+
+
+  font-size: 80%;
   background-color: #fff;
   border-radius: 10px;
   position: relative;
@@ -350,8 +498,8 @@ textarea{
 .trackerBtn{
   background-color: #fff;
   border: 0px;
-height: 30px;
-    width: 70px;
+  height: 30px;
+  width: 70px;
   cursor: pointer;
   font-size: 100%;
   position:relative;
@@ -369,7 +517,6 @@ height: 30px;
 .tracker_plus_sign:active{
   background-color: #2BAE66FF;
   border-radius: 50px;
-
   color: #fff;
 }
 

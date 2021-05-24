@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import Retrieve from './Retrieve';
 import $ from 'jquery';
 
 
@@ -9,6 +10,19 @@ const CreateNote = (props) => {
   const [expand, setExpand] = useState(false);
 
   const [note, setNote] = useState({title:'',docname:'',content:''});
+
+  const y=Retrieve();
+  // useEffect(() => {
+  //
+  // },[]);
+  function retieveValues(data){
+    setNote({
+      title: data.Title,
+      docname: data.DocName,
+      content: data.Issue,
+    })
+    console.log(data);
+  }
 
   const InputEvent = (event) =>{
     const {name, value} = event.target;
@@ -40,6 +54,7 @@ const CreateNote = (props) => {
 
   function sub() {
  $.post("http://localhost/insertval.php",note);
+ window.location.reload();
   }
 
   return (
@@ -47,6 +62,7 @@ const CreateNote = (props) => {
         <div className="main_note">
           <form action="insertval.php" method="post">
             <input type='text'
+              className="mainNoteTextArea"
               name='title'
               value={note.title}
               onChange={InputEvent}
@@ -59,6 +75,7 @@ const CreateNote = (props) => {
 
             {expand?
             <textarea
+              className="mainNoteTextArea"
               rows=''
               column=''
               name='docname'
@@ -69,6 +86,7 @@ const CreateNote = (props) => {
 
             {expand?
             <textarea
+              className="mainNoteTextArea"
               rows=''
               column=''
               name='content'

@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useState} from 'react';
-import LoginForum from './LoginForum'
+import React, {useState, useEffect} from 'react';
+import LoginForum from './LoginForum';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Header from './Header';
 import IntroCardVisits from './IntroCardVisits'
 import IntroCardTracker from './IntroCardTracker'
@@ -21,10 +22,13 @@ import Tcholesterol from './Tcholesterol';
 import Tbloodsugar from './Tbloodsugar';
 import Tbloodpressure from './Tbloodpressure';
 import Tweight from './Tweight';
+import Retrieve from './Retrieve'
 
 const App = () => {
 
-  const [addItem, setAddItem] =useState([]);
+  const [addItem, setAddItem] = useState([]);
+  const x=Retrieve();
+
   const addNote = (note) => {
       setAddItem((prevData)=>{
         return [...prevData, note];
@@ -57,25 +61,36 @@ const Login = details => {
   }
 }
 
-const Logut = details => {
+const Logout=(details)=> {
   console.log("Logout");
   setUser({
     name: "",
-    email: ""
+    email: "",
   })
+  window.localStorage.removeItem("loginInfo");
 }
+
+useEffect(()=>{
+  const loginData = window.localStorage.getItem("loginInfo");
+  setUser(JSON.parse(loginData));
+}, []);
+
+useEffect(()=>{
+  window.localStorage.setItem("loginInfo", JSON.stringify(user));
+});
 
   return (
     <>
     {(user.email != "")?(
     <div>
-    <Navbar/>
+    <Navbar Logout={Logout}/>
     <Switch>
     <Route exact path ="/visits">
         <IntroCardVisits/>
         <CreateCard
           passNote={addNote}
         />
+        <Retrieve/>
         <div className="mapArea">
         {addItem.map((val, index)=>{
           return <Note
