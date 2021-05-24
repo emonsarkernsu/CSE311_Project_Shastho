@@ -8,6 +8,7 @@ import IntroCardVisits from './IntroCardVisits'
 import IntroCardTracker from './IntroCardTracker'
 import IntroCardStatus from './IntroCardStatus'
 import CreateCard from './CreateCard';
+import CreateCardAllergy from './CreateCardAllergy';
 import Note from './Note';
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -25,20 +26,7 @@ import Tweight from './Tweight';
 import Retrieve from './Retrieve'
 
 const App = () => {
-
-  const [addItem, setAddItem] = useState([]);
-  const x=Retrieve();
-
-  const addNote = (note) => {
-      setAddItem((prevData)=>{
-        return [...prevData, note];
-      });};
-  const onDelete = (id) =>{
-    setAddItem((olddata)=>
-    olddata.filter((currentdata, indx) =>{
-      return indx !== id;
-    }))};
-
+  
 //Login stuff
 const adminUser = {
   email: "emon331@gmail.com",
@@ -58,6 +46,7 @@ const Login = details => {
     })
   } else {
     console.log("Details do not match");
+    setError("Details do not match.")
   }
 }
 
@@ -67,6 +56,7 @@ const Logout=(details)=> {
     name: "",
     email: "",
   })
+  setError("");
   window.localStorage.removeItem("loginInfo");
 }
 
@@ -87,26 +77,11 @@ useEffect(()=>{
     <Switch>
     <Route exact path ="/visits">
         <IntroCardVisits/>
-        <CreateCard
-          passNote={addNote}
-        />
+        <CreateCard/>
         <Retrieve/>
-        <div className="mapArea">
-        {addItem.map((val, index)=>{
-          return <Note
-              key={index}
-              id={index}
-              title={val.title}
-              content={val.content}
-              docname={val.docname}
-              deleteItem = {onDelete}
-              />
-        })}
-        </div>
       </Route>
       <Route exact path="/tracker">
         <IntroCardTracker/>
-
         <div className="trackerContainer"><Tweight/><InputWeight/></div>
         <div className="trackerContainer"><Tcholesterol/><InputCholesterol/></div>
         <div className="trackerContainer"><Tbloodpressure/><InputBloodPressure/></div>
@@ -119,6 +94,19 @@ useEffect(()=>{
       <Status/>
       </Route>
 
+      <Route exact path="/status/allergy">
+      <CreateCardAllergy/>
+      </Route>
+      <Route exact path="/status/obesity">
+      </Route>
+      <Route exact path="/status/diabetes">
+      </Route>
+      <Route exact path="/status/genetic">
+      </Route>
+      <Route exact path="/status/mental">
+      </Route>
+      <Route exact path="/status/cardiac">
+      </Route>
 
       <Route path="/">
       <PageNotFound/>

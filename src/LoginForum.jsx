@@ -26,6 +26,7 @@ function LoginForum({Login, error}){
           <div className="form-group">
             <input id="label" type="password" placeHolder="Password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
           </div>
+          {(error != "") ? (<div className="error">{error}</div>) : ""}
           <div className="center_btn">
             <button className="login_btn" type="submit" value="LOGIN" onClick={submitHandler}> LOGIN </button>
           </div>

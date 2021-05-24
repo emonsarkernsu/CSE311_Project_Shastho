@@ -5,10 +5,9 @@ import Retrieve from './Retrieve';
 import $ from 'jquery';
 
 
-const CreateNote = (props) => {
+const CreateCardAllergy = (props) => {
 
   const [expand, setExpand] = useState(false);
-
   const [note, setNote] = useState({title:'',docname:'',content:''});
 
   const InputEvent = (event) =>{
@@ -23,6 +22,7 @@ const CreateNote = (props) => {
   };
 
   const addEvent = () => {
+      props.passNote(note);
       setNote({
         title:'',
         content:'',
@@ -55,6 +55,7 @@ const CreateNote = (props) => {
               autoComplete='off'
               onClick={expandIt}
               />
+
 
 
             {expand?
@@ -92,4 +93,4 @@ const CreateNote = (props) => {
 );
 };
 
-export default CreateNote;
+export default CreateCardAllergy;

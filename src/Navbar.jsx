@@ -20,7 +20,7 @@ const [details2, setDetails2] = useState({name:"", email:""});
       <NavLink exact activeClassName="active_class" to='/status'> Status </NavLink>
       <button className="logout" >
         <ExitToAppIcon onClick={()=>logout()}/>
-        <span class="tooltip"> Logout </span>
+        <span class="tooltip">Logout</span>
        </button>
       </div>
       </>

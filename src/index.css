@@ -83,6 +83,11 @@ h2{
   max-width: 200px;
 }
 
+.error{
+  text-align: center;
+
+}
+
 #label{
   font-style: italic;
   font-size: 70%;
@@ -94,6 +99,12 @@ h2{
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
+
+}
+
+.form-group input{
+  background-color: #fafafa;
+
 }
 
 .forum_wrapper {
@@ -129,11 +140,14 @@ h2{
   border: none;
   border-radius: 10px;
   padding-right: 5px;
+}
 
+.logout :hover{
+  color:#2BAE66FF;
 }
 .logout .tooltip{
   visibility: hidden;
-  width: 120px;
+  width: 70px;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -143,7 +157,7 @@ h2{
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -40px;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -154,12 +168,12 @@ h2{
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
+
   border-style: solid;
   border-color: #555 transparent transparent transparent;
 }
 .logout:hover .tooltip{
+  transition-delay: 1s;
   visibility: visible;
   opacity: 1;
 }
@@ -647,8 +661,68 @@ margin-right: 10px;
 }
 
 
-.statusCard{
-  padding: 15px;
+.statusGrid{
+  max-width: 500px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border-spacing: 10px;
+  border-radius: 25px;
+}
+.statusContainer{
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.statusGridCard{
+  justify-content: center;
+  display: block;
+  right: 50;
+  background: #fff;
+  max-width: 155px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-spacing: 10px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.statusGrid p{
+  text-align: center;
+}
+.statusImage{
+  width: 140px;
+}
+.statusGridCard p{
+  font-size: 70%;
+  color: grey;
+}
+.statusGridCard a{
+  font-size: 100%;
+  display: flex;
+  justify-content:center;
+  padding: 5px;
+  background: #ddd;
+  border-radius: 25px;
+  margin: auto;
+  margin-top: 10px;
+  color: #000;
+  text-decoration: none;
+  transition: 0.2s;
+
+}
+.statusGridCard  a:hover{
+  font-size: 100%;
+  display: flex;
+  justify-content:center;
+  padding: 5px;
+  background: #2BAE66FF;
+  border-radius: 25px;
+  margin: auto;
+  margin-top: 10px;
+  color: white;
+  transition: 0.2s;
 }
 
 .pageNotFoundBg{
