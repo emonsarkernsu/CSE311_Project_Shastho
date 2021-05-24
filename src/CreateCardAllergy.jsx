@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Retrieve from './Retrieve';
+import {NavLink} from 'react-router-dom';
 import $ from 'jquery';
 
 
@@ -42,6 +44,15 @@ const CreateCardAllergy = (props) => {
 
   return (
     <>
+    <div className="statusBack">
+    <NavLink exact activeClassName="active_class" to='/status'>
+    <button className="logout" >
+      <ArrowBackIcon/>
+      <span class="tooltip">Go Back</span>
+     </button>
+     </NavLink>
+     <h1> Allergy </h1>
+      </div>
         <div className="main_note">
           <form action="insertvalStatusAllergy.php" method="post">
             <input type='text'
@@ -49,7 +60,7 @@ const CreateCardAllergy = (props) => {
               name='title'
               value={note.title}
               onChange={InputEvent}
-              placeholder ="Visit Title"
+              placeholder ="Add a title"
               autoComplete='off'
               onClick={expandIt}
               />
@@ -62,7 +73,7 @@ const CreateCardAllergy = (props) => {
               name='description'
               value={note.description}
               onChange={InputEvent}
-              placeholder="Details regarding your doctor's visit...">
+              placeholder="Write your description here...">
             </textarea> : null}
 
             <Button onClick={()=>{addEvent();dontExpandIt();sub();}}>

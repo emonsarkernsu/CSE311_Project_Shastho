@@ -28,13 +28,13 @@ const RetrieveAllergy=() =>{
                  <div className="col-sm-12 btn btn-info">
                   </div>
              </div>
-             
+
              <table class="table" >
                  <thead class="tableHeader">
                      <tr>
                          <th scope="col" class="thx"></th>
                          <th scope="col" class="th1">Title</th>
-                         <th scope="col" class="th2">Doctor's name</th>
+                         <th scope="col" class="th2">Description</th>
                      </tr>
                  </thead>
 
