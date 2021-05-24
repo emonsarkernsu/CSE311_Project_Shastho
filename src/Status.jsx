@@ -35,17 +35,17 @@ return(
         <Grid item sm={4} className="statusGridCard">
         <img className="statusImage" src={genetics} alt="logo" />
         <p>Track your and your family's genetic predispositions.</p>
-        <NavLink className="statusLinks" exact activeClassName="active_class" to='/status/geneticpredisposition'> Genetic </NavLink>
+        <NavLink className="statusLinks" exact activeClassName="active_class" to='/status/genetic'> Genetic </NavLink>
         </Grid>
         <Grid item sm={4} className="statusGridCard">
         <img className="statusImage" src={mental} alt="logo" />
         <p>Track your and your family's history with allergies.</p>
-        <NavLink className="statusLinks" exact activeClassName="active_class" to='/status/mentalIllness'> Mental Illness </NavLink>
+        <NavLink className="statusLinks" exact activeClassName="active_class" to='/status/mental'> Mental Illness </NavLink>
         </Grid>
         <Grid item sm={4} className="statusGridCard">
         <img className="statusImage" src={cardiac} alt="logo" />
         <p>Track your and your family's history with allergies.</p>
-        <NavLink className="statusLinks" exact activeClassName="active_class" to='/status/cardiachealth'> Cardiac Health </NavLink>
+        <NavLink className="statusLinks" exact activeClassName="active_class" to='/status/cardiac'> Cardiac Health </NavLink>
         </Grid>
       </Grid>
 

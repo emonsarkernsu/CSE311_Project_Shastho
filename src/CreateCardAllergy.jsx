@@ -8,7 +8,7 @@ import $ from 'jquery';
 const CreateCardAllergy = (props) => {
 
   const [expand, setExpand] = useState(false);
-  const [note, setNote] = useState({title:'',docname:'',content:''});
+  const [note, setNote] = useState({title:'',description:''});
 
   const InputEvent = (event) =>{
     const {name, value} = event.target;
@@ -22,11 +22,9 @@ const CreateCardAllergy = (props) => {
   };
 
   const addEvent = () => {
-      props.passNote(note);
       setNote({
         title:'',
-        content:'',
-        docname:'',
+        description:'',
       });
   };
 
@@ -38,14 +36,14 @@ const CreateCardAllergy = (props) => {
   }
 
   function sub() {
- $.post("http://localhost/insertval.php",note);
+ $.post("http://localhost/insertvalStatusAllergy.php",note);
  window.location.reload();
   }
 
   return (
     <>
         <div className="main_note">
-          <form action="insertval.php" method="post">
+          <form action="insertvalStatusAllergy.php" method="post">
             <input type='text'
               className="mainNoteTextArea"
               name='title'
@@ -56,35 +54,19 @@ const CreateCardAllergy = (props) => {
               onClick={expandIt}
               />
 
-
-
             {expand?
             <textarea
               className="mainNoteTextArea"
               rows=''
               column=''
-              name='docname'
-              value={note.docname}
-              onChange={InputEvent}
-              placeholder="Doctor's Name...">
-            </textarea> : null}
-
-            {expand?
-            <textarea
-              className="mainNoteTextArea"
-              rows=''
-              column=''
-              name='content'
-              value={note.content}
+              name='description'
+              value={note.description}
               onChange={InputEvent}
               placeholder="Details regarding your doctor's visit...">
             </textarea> : null}
 
             <Button onClick={()=>{addEvent();dontExpandIt();sub();}}>
-              <AddIcon className= 'plus_sign'
-              //onClick={dontExpandIt,sub()}
-              //onClick={sub()}
-              />
+              <AddIcon className= 'plus_sign'/>
             </Button>
 
           </form>

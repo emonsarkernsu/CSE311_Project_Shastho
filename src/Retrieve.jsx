@@ -7,25 +7,6 @@ import $ from 'jquery';
 const Retrieve=() =>{
   const [data, setData] = useState([]);
 
-
-    // function insertValues(){
-    //   for(var i=0; i<info.length;i++ ){
-    //     // setData({
-    //     //   title: info[i],
-    //     //   docname: info[i+1],
-    //     //   content: info[i+2],
-    //     // })
-    //     console.log(data);
-    //   }
-    //   // setData({
-    //   //   title: info,
-    //   //   docname: info2,
-    //   //   content: info3,
-    //   // })
-    //   console.log(info);
-    //    //CreateCard.retrieveValues(data);
-    // }
-    //       let info=[];
     useEffect(() => {
          debugger;
          Axios

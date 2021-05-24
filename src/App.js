@@ -9,6 +9,11 @@ import IntroCardTracker from './IntroCardTracker'
 import IntroCardStatus from './IntroCardStatus'
 import CreateCard from './CreateCard';
 import CreateCardAllergy from './CreateCardAllergy';
+import CreateCardCardiac from './CreateCardCardiac';
+import CreateCardDiabetes from './CreateCardDiabetes';
+import CreateCardGenetic from './CreateCardGenetic';
+import CreateCardMental from './CreateCardMental';
+import CreateCardObesity from './CreateCardObesity';
 import Note from './Note';
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -26,7 +31,7 @@ import Tweight from './Tweight';
 import Retrieve from './Retrieve'
 
 const App = () => {
-  
+
 //Login stuff
 const adminUser = {
   email: "emon331@gmail.com",
@@ -97,15 +102,20 @@ useEffect(()=>{
       <Route exact path="/status/allergy">
       <CreateCardAllergy/>
       </Route>
-      <Route exact path="/status/obesity">
+      <Route exact path="/status/cardiac">
+      <CreateCardCardiac/>
       </Route>
       <Route exact path="/status/diabetes">
+      <CreateCardDiabetes/>
       </Route>
       <Route exact path="/status/genetic">
+      <CreateCardGenetic/>
       </Route>
       <Route exact path="/status/mental">
+      <CreateCardMental/>
       </Route>
-      <Route exact path="/status/cardiac">
+      <Route exact path="/status/obesity">
+      <CreateCardObesity/>
       </Route>
 
       <Route path="/">
