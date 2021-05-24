@@ -138,7 +138,9 @@ useEffect(()=>{
       <Footer/>
       </div>
     ):(
-      <LoginForum Login={Login} error={error}/>
+
+         <LoginForum Login={Login} error={error}/>
+
     )}
     </>
   );

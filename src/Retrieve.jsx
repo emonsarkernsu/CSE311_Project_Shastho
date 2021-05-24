@@ -29,9 +29,7 @@ const Retrieve=() =>{
 
                   </div>
              </div>
-             <div className="storedValues">
-             <h1>Stored Values </h1> <h3></h3> <h4>.of your visits</h4>
-             </div>
+             
              <table class="table" >
                  <thead class="tableHeader">
                      <tr>
