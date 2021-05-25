@@ -1,5 +1,6 @@
-import logo from './logo.svg';
+import logo from './Images/Asset 1.svg';
 import './App.css';
+import homepage from './Images/SVG/homepage.svg';
 import React, {useState, useEffect} from 'react';
 import LoginForum from './LoginForum';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -35,8 +36,14 @@ import RetrieveDiabetes from './RetrieveDiabetes'
 import RetrieveGenetic from './RetrieveGenetic'
 import RetrieveMental from './RetrieveMental'
 import RetrieveObesity from './RetrieveObesity'
+import MyContextProvider from './MyContext.js'
+import Home from './Home';
 
 const App = () => {
+
+  const [expandH, setExpandH] = useState(true);
+  const showH = () =>{setExpandH(true);}
+  const dontShowH = () =>{setExpandH(false);}
 
 //Login stuff
 const adminUser = {
@@ -81,68 +88,14 @@ useEffect(()=>{
 });
 
   return (
-    <>
-    {(user.email != "")?(
     <div>
-    <Navbar Logout={Logout}/>
-    <Switch>
-    <Route exact path ="/visits">
-        <IntroCardVisits/>
-        <CreateCard/>
-        <Retrieve/>
-      </Route>
-      <Route exact path="/tracker">
-        <IntroCardTracker/>
-        <div className="trackerContainer"><Tweight/><InputWeight/></div>
-        <div className="trackerContainer"><Tcholesterol/><InputCholesterol/></div>
-        <div className="trackerContainer"><Tbloodpressure/><InputBloodPressure/></div>
-        <div className="trackerContainer"><Tbloodsugar/><InputBloodSugar/></div>
 
-
-      </Route>
-      <Route exact path="/status">
-      <IntroCardStatus/>
-      <Status/>
-      </Route>
-
-      <Route exact path="/status/allergy">
-        <CreateCardAllergy/>
-        <RetrieveAllergy/>
-      </Route>
-      <Route exact path="/status/cardiac">
-        <CreateCardCardiac/>
-        <RetrieveCardiac/>
-      </Route>
-      <Route exact path="/status/diabetes">
-        <CreateCardDiabetes/>
-        <RetrieveDiabetes/>
-      </Route>
-      <Route exact path="/status/genetic">
-        <CreateCardGenetic/>
-        <RetrieveGenetic/>
-      </Route>
-      <Route exact path="/status/mental">
-        <CreateCardMental/>
-        <RetrieveMental/>
-      </Route>
-      <Route exact path="/status/obesity">
-        <CreateCardObesity/>
-        <RetrieveObesity/>
-      </Route>
-
-      <Route path="/">
-      <PageNotFound/>
-      </Route>
-
-      </Switch>
-      <Footer/>
+      <p className="whitename"> ,,,,,</p>
+      <MyContextProvider>
+        <Home/>
+      </MyContextProvider>
       </div>
-    ):(
 
-         <LoginForum Login={Login} error={error}/>
-
-    )}
-    </>
   );
 };
 

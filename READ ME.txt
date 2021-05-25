@@ -1,0 +1,2 @@
+Might have CORS error.
+It can be fixed by downloading and enabling Moesif CORS.
